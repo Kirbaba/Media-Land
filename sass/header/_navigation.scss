@@ -1,0 +1,24 @@
+.navigation {
+	border-bottom: none;
+	border-top: 10px solid #0082C7;
+	background-color: #fff;
+	height: 80px;
+}
+.navbar-right {
+	margin-right: 0!important;
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-size: 16px;
+	font-family: $b;
+	text-transform: uppercase;
+	color: #7A7B80;
+	&:hover {
+		color: $blue;
+	}
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	margin-top: 10px;
+}
+

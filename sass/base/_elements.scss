@@ -1,0 +1,38 @@
+.social {
+	margin-top: 10px;
+	.social__icon {
+		width: 29px;
+		height: 29px;
+		@include border-radius(5px);
+		@include background-clip(padding-box);
+		background-color: #096595;
+		display: block;
+		float: left;
+		color: #FFF!important;
+		margin: 0 5px;
+		text-align: center;
+		line-height: 29px;
+	    padding: 0!important;
+	    position: relative;
+		&:hover {
+			background-color: lighten(#096595, 15%)!important;
+		}
+		.mail, .ya, .lj {
+			display: block;
+			position: absolute;
+		    width: 29px;
+	    	height: 29px;
+	    	background-repeat: no-repeat;
+	    	background-position: 50% 50%;	
+		}
+		.mail {
+			background-image: url('../img/mail.png');
+		}
+		.ya {
+			background-image: url('../img/ya.png');
+		}
+		.lj {
+			background-image: url('../img/lj.png');
+		}
+	}
+}

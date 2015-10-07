@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'PantonBold';
+  src: url("../fonts/PantonBold.eot");
+  src: url("../fonts/PantonBold.eot") format("embedded-opentype"), url("../fonts/PantonBold.woff2") format("woff2"), url("../fonts/PantonBold.woff") format("woff"), url("../fonts/PantonBold.ttf") format("truetype"), url("../fonts/PantonBold.svg#PantonBold") format("svg"); }
+@font-face {
+  font-family: 'PantonBoldItalic';
+  src: url("../fonts/PantonBoldItalic.eot");
+  src: url("../fonts/PantonBoldItalic.eot") format("embedded-opentype"), url("../fonts/PantonBoldItalic.woff2") format("woff2"), url("../fonts/PantonBoldItalic.woff") format("woff"), url("../fonts/PantonBoldItalic.ttf") format("truetype"), url("../fonts/PantonBoldItalic.svg#PantonBoldItalic") format("svg"); }
+@font-face {
+  font-family: 'PantonRegular';
+  src: url("../fonts/PantonRegular.eot");
+  src: url("../fonts/PantonRegular.eot") format("embedded-opentype"), url("../fonts/PantonRegular.woff2") format("woff2"), url("../fonts/PantonRegular.woff") format("woff"), url("../fonts/PantonRegular.ttf") format("truetype"), url("../fonts/PantonRegular.svg#PantonRegular") format("svg"); }
+body {
+  font-family: "PantonRegular"; }
+
 a {
   text-decoration: none; }
   a:hover, a:focus, a:active {
@@ -21,11 +36,73 @@ ul {
 .align-right {
   text-align: right; }
 
+.social {
+  margin-top: 10px; }
+  .social .social__icon {
+    width: 29px;
+    height: 29px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #096595;
+    display: block;
+    float: left;
+    color: #FFF !important;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 29px;
+    padding: 0 !important;
+    position: relative; }
+    .social .social__icon:hover {
+      background-color: #0d96dd !important; }
+    .social .social__icon .mail, .social .social__icon .ya, .social .social__icon .lj {
+      display: block;
+      position: absolute;
+      width: 29px;
+      height: 29px;
+      background-repeat: no-repeat;
+      background-position: 50% 50%; }
+    .social .social__icon .mail {
+      background-image: url("../img/mail.png"); }
+    .social .social__icon .ya {
+      background-image: url("../img/ya.png"); }
+    .social .social__icon .lj {
+      background-image: url("../img/lj.png"); }
+
+.navigation {
+  border-bottom: none;
+  border-top: 10px solid #0082C7;
+  background-color: #fff;
+  height: 80px; }
+
+.navbar-right {
+  margin-right: 0 !important; }
+
+.navbar-default .navbar-nav > li > a {
+  font-size: 16px;
+  font-family: "PantonBold";
+  text-transform: uppercase;
+  color: #7A7B80; }
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #0082c7; }
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  margin-top: 10px; }
+
+@media only screen and (max-width: 980px) {
+  .navbar-default .navbar-nav > li > a {
+    font-size: 15px; } }
 @media only screen and (max-width: 770px) {
   .align-left {
     text-align: center; }
 
   .align-right {
     text-align: center; } }
+@media only screen and (max-width: 500px) {
+  .navbar-right {
+    margin-right: -15px !important; } }
 
 /*# sourceMappingURL=style.css.map */
