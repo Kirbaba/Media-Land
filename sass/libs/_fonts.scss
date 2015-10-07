@@ -1,0 +1,33 @@
+$b: 'PantonBold';
+$bi: 'PantonBoldItalic';
+$r: 'PantonRegular';
+
+@font-face {
+    font-family: 'PantonBold';
+    src: url('../fonts/PantonBold.eot');
+    src: url('../fonts/PantonBold.eot') format('embedded-opentype'),
+         url('../fonts/PantonBold.woff2') format('woff2'),
+         url('../fonts/PantonBold.woff') format('woff'),
+         url('../fonts/PantonBold.ttf') format('truetype'),
+         url('../fonts/PantonBold.svg#PantonBold') format('svg');
+}
+
+@font-face {
+    font-family: 'PantonBoldItalic';
+    src: url('../fonts/PantonBoldItalic.eot');
+    src: url('../fonts/PantonBoldItalic.eot') format('embedded-opentype'),
+         url('../fonts/PantonBoldItalic.woff2') format('woff2'),
+         url('../fonts/PantonBoldItalic.woff') format('woff'),
+         url('../fonts/PantonBoldItalic.ttf') format('truetype'),
+         url('../fonts/PantonBoldItalic.svg#PantonBoldItalic') format('svg');
+}
+
+@font-face {
+    font-family: 'PantonRegular';
+    src: url('../fonts/PantonRegular.eot');
+    src: url('../fonts/PantonRegular.eot') format('embedded-opentype'),
+         url('../fonts/PantonRegular.woff2') format('woff2'),
+         url('../fonts/PantonRegular.woff') format('woff'),
+         url('../fonts/PantonRegular.ttf') format('truetype'),
+         url('../fonts/PantonRegular.svg#PantonRegular') format('svg');
+}
