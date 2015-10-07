@@ -9,6 +9,8 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaOWKyamSxMTXclSDFmJ2N4Am20PCTD6I&sensor=FALSE">
     </script>
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
     <?php wp_head(); ?>
 </head>
 <body>
@@ -48,6 +50,21 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- <div class="fotorama" data-width="100%" data-minheight="500">
+					<div class="fotorama__item" data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg"></div>						
+					<div class="fotorama__item" data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg"></div>
+				</div> -->
+				<div class="responsive">
+					<div><img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt=""></div>
+					<div><img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</header>
 <?php wp_footer(); ?>
 </body>
 </html>

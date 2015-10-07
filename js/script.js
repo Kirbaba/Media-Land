@@ -54,3 +54,16 @@ $(function() {
     });
 });
 
+$(function () {
+
+    $('.responsive').slick({
+        dots: true,
+        infinite: false,
+        autoplay: true,
+        speed: 300,
+        arrows: false,        
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+
+});
