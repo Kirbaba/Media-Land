@@ -36,6 +36,44 @@ ul {
 	text-align: right;
 }
 
+.blue {
+	color: $blue;
+}
+
+@media (min-width: 1200px) {
+	.col-md-17,
+	.col-sm-17,
+	.col-lg-17,
+	.col-xs-17 {
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+		width: 14.285714285714285714285714285714%;
+		*width: 14.285714285714285714285714285714%;
+		margin-left: 0!important;
+		float: left;
+	}
+}
+
+@media (min-width: 992px) {
+	.col-md-17 {
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+		width: 14.285714285714285714285714285714%;
+		*width: 14.285714285714285714285714285714%;
+		margin-left: 0!important;
+		float: left;
+	}
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 
 
 

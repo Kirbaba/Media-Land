@@ -1,11 +1,11 @@
 
 /*-------------GOOGLE MAPS-----------------*/
 
-/*function initialize() {
+function initialize() {
 
-    var myLatlng = new google.maps.LatLng(59.934602, 30.334607);
+    var myLatlng = new google.maps.LatLng(55.738689,37.6402820);
     var mapOptions = {
-        center: new google.maps.LatLng(59.934602, 30.334607),
+        center: new google.maps.LatLng(55.738649,37.6379400),
         zoom: 17,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         scrollwheel: false
@@ -27,7 +27,7 @@ function loadScript() {
 }
 
 window.onload = loadScript;
-*/
+
 
 
 $(function() {
@@ -77,5 +77,17 @@ jQuery(document).ready(function($) {
     $('.license__item').each(function(){
         $(this).css('height',$(this).width());
        $(this).css('line-height', $(this).width() + 'px');
+    });
+     $('.license__item').each(function(){
+        $(this).css('height',$(this).width());
+       $(this).css('line-height', $(this).width() + 'px');
+    });
+     $('.channels__item').each(function(){
+        $(this).css('height', $(this).width() * 0.66 );
+       $(this).css('line-height', $(this).height() + 'px');
+    });
+
+     $('.workers__item--avatar').each(function(){
+        $(this).css('height', $(this).width() );
     });
 });

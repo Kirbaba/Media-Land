@@ -1,0 +1,44 @@
+.footer {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	background-image: url('../img/bg3.png');
+	background-position: 50% 50%;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	padding: 25px 0 50px;
+	text-align: center;
+	color: #FFF;
+	h1 {
+		font-size: 52px;
+		margin: 0;
+	}
+	.nav {
+		width: 100%;
+		text-align: center;
+		margin: 10px 0;
+		li {
+		  float: none;
+		  display: inline-block;		  	  
+		  a {
+		  	font-size: 16px;
+			color: #FFF;	
+			font-family: $b;
+			text-transform: uppercase;
+			&:hover {
+				background: none;
+				color: $blue;
+			}
+		  }
+		}
+	}
+	.social {
+		margin-top: 10px;
+		display: block;
+		width: auto;
+		float: left;
+		margin-left: 20px;
+	}
+}
