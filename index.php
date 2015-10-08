@@ -59,12 +59,40 @@
 					<div class="fotorama__item" data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg"></div>
 				</div> -->
 				<div class="responsive">
-					<div><img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt=""></div>
-					<div><img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt=""></div>
+					<div>
+						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
+						<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-8 col-xs-11">
+							<div class="header__slidedescription">
+								<h2>Кот в сапогах</h2>
+								<p>Набор посуды из трех предметов</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
+	<section class="about">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<h3>MEDIA LAND – компания, оказывающая полный пакет услуг по организации поставок игрушек из Китая.
+					 Мы действуем комплексно, полностью контролируя все этапы – от согласования заказа и 
+					 запуска производства до организации транспортировки товара на Ваш склад.</h3>
+					 
+					 <p>Компания начала свою деятельность в 1997 году в качестве организации по продаже и 
+					 	распространению компакт-дисков на территории России и стран СНГ. 
+					 	Таким образом, мы стояли у самых истоков зарождения рынка легальной дистрибьюции и сразу 
+					 	заняли позицию лидера, которую уверенно продолжаем удерживать и сейчас. </p>
+				</div>
+			</div>
+		</div>
+	</section>
 <?php wp_footer(); ?>
 </body>
 </html>

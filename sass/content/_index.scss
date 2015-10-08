@@ -1,2 +1,21 @@
-
+.about {
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+	background-color: #2A4E6E;
+	padding: 35px 0;
+	top: -1px;
+	color: #fff;
+	text-align: center;
+	h3 {
+		text-transform: uppercase;
+	    font-size: 1.55em;
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 16px;
+		padding: 0 125px;
+	}
+}
 

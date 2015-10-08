@@ -1,6 +1,24 @@
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1025px) {
 	.navbar-default .navbar-nav > li > a {
 		font-size: 15px;
+	}
+	ul.nav.navbar-nav.navbar-right.navigation__list {
+	    margin-top: 20px;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		margin-top: 10px;
+		background: #FFF;
+		margin: 20px -15px 0;
+		padding: 15px 0;
+	}
+	 .slick-slide{
+    	margin-top: 70px;
+		img {
+			width: 100%;
+		}
+	}
+	.about p {
+	    padding: 0 50px;
 	}
 }
 
@@ -11,10 +29,45 @@
 	.align-right {
 		text-align: center;
 	}
+	.about p {
+	    padding: 0 25px;
+	}
 }
 
 @media only screen and (max-width: 500px) {
 	.navbar-right {
-		margin-right: -15px!important;
+		margin-right: -10px!important;
 	}
+
+	.navbar {
+		margin-bottom: 10px;
+	}
+
+	.social {
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    	margin-top: 20px;
+    }
+
+    .header__slidedescription {
+    	border-left-width: 10px;
+    	padding: 10px 0 10px 20px;
+    	bottom: 40px;
+    	h2 {
+    		font-size: 25px;
+    	}
+    	p {
+    		font-size: 12px;
+    	}
+    }
+     .slick-slide{
+    	margin-top: 35px; 
+    }
+	.about p {
+    	padding: 0 15px;
+	}
+   
 }
