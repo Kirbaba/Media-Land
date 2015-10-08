@@ -14,8 +14,10 @@ ul {
 }
 
 .block_title {
-	color: #fff;
-    font-size: 3.5em;
+	color: #FFF;
+	text-transform: uppercase;
+	font-family: $b;
+    font-size: 20px;
 	text-align: center;
 	margin-top: 15px;	
 }
@@ -24,6 +26,9 @@ ul {
 	padding: 0;
 }
 
+.p5 {
+	padding: 0 5px;
+}
 .align-left {
 	text-align: left;
 }

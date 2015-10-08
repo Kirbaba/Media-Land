@@ -67,3 +67,10 @@ $(function () {
     });
 
 });
+
+jQuery(document).ready(function($) {
+    $('.production__item').each(function(){
+        $(this).css('height', $(this).width()); 
+        $(this).css('line-height', $(this).width() + 'px');       
+    });
+});

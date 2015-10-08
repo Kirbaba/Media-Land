@@ -35,6 +35,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+	.p5 {
+		padding: 0 15px;
+	}
 	.navbar-right {
 		margin-right: -10px!important;
 	}

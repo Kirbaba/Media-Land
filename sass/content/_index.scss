@@ -6,6 +6,7 @@
 	background-color: #2A4E6E;
 	padding: 35px 0;
 	top: -1px;
+	margin-bottom: -1px;
 	color: #fff;
 	text-align: center;
 	h3 {
@@ -16,6 +17,102 @@
 	p {
 		font-size: 16px;
 		padding: 0 125px;
+	}
+}
+
+.production {
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+	background-image: url('../img/prod_bg.png');
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	padding: 50px 0 25px;
+	.nav-pills {
+		width: 100%;
+		text-align: center;
+		margin: 35px 0;
+		li {
+		  float: none;
+		  display: inline-block;
+		  width: 160px;
+		  border: 2px solid rgba(255, 255, 255, 0); 		  
+		  a {
+		  	font-size: 17px;
+			color: #FFF;	
+		  }
+		}
+	}
+	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+		background: rgba(255, 255, 255, 0);
+		border: 2px solid #fff; 
+		@include border-radius(17px);
+		@include background-clip(padding-box);
+	}
+	.nav > li > a:hover, .nav > li > a:focus {
+		background: rgba(255, 255, 255, 0);
+		border: 2px solid rgba(255, 255, 255, 0.25); 
+		@include border-radius(17px);
+		@include background-clip(padding-box);
+	}
+
+	&__item {
+		background-color: #FFF;
+		margin: 5px 0;
+		position: relative;
+		img {
+			width: 100%;
+			vertical-align: middle;
+		}
+		a {
+			display: none;
+			position: absolute;
+			top: 2px;
+			bottom: 2px;
+			left: 2px;
+			right: 2px;
+			background: rgba(26, 77, 114, 0.47);
+			font-family: $bi;
+			font-size: 21px;
+			text-align: center;
+			vertical-align: middle;
+			color: #fff;
+			text-decoration: none;
+			padding: 0 25px;
+		}
+		&:hover {
+			a {
+				display: block;
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+		&--showmore {
+			width: 70%;			
+			margin: 25px 15%;
+			font-family: $r;
+			display: block;
+			@include border-radius(17px);
+			@include background-clip(padding-box);
+			padding: 5px 10px;
+			border: 2px solid #fff;
+			text-align: center;
+			color: #FFF;
+			text-decoration: none;
+			font-size: 16px;
+			@include transition(0.5s);
+			&:hover, &:active, &:focus {
+				color: $blue;
+				background-color: #FFF;
+				text-decoration: none;
+			}
+			
+		}
 	}
 }
 

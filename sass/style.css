@@ -22,13 +22,18 @@ ul {
   list-style-type: none; }
 
 .block_title {
-  color: #fff;
-  font-size: 3.5em;
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: "PantonBold";
+  font-size: 20px;
   text-align: center;
   margin-top: 15px; }
 
 .p0 {
   padding: 0; }
+
+.p5 {
+  padding: 0 5px; }
 
 .align-left {
   text-align: left; }
@@ -196,6 +201,7 @@ ul {
   background-color: #2A4E6E;
   padding: 35px 0;
   top: -1px;
+  margin-bottom: -1px;
   color: #fff;
   text-align: center; }
   .about h3 {
@@ -205,6 +211,101 @@ ul {
   .about p {
     font-size: 16px;
     padding: 0 125px; }
+
+.production {
+  display: block;
+  float: left;
+  width: 100%;
+  position: relative;
+  background-image: url("../img/prod_bg.png");
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  padding: 50px 0 25px; }
+  .production .nav-pills {
+    width: 100%;
+    text-align: center;
+    margin: 35px 0; }
+    .production .nav-pills li {
+      float: none;
+      display: inline-block;
+      width: 160px;
+      border: 2px solid rgba(255, 255, 255, 0); }
+      .production .nav-pills li a {
+        font-size: 17px;
+        color: #FFF; }
+  .production .nav-pills > li.active > a, .production .nav-pills > li.active > a:hover, .production .nav-pills > li.active > a:focus {
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid #fff;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    border-radius: 17px;
+    -o-background-clip: padding-box;
+    background-clip: padding-box; }
+  .production .nav > li > a:hover, .production .nav > li > a:focus {
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    border-radius: 17px;
+    -o-background-clip: padding-box;
+    background-clip: padding-box; }
+  .production__item {
+    background-color: #FFF;
+    margin: 5px 0;
+    position: relative; }
+    .production__item img {
+      width: 100%;
+      vertical-align: middle; }
+    .production__item a {
+      display: none;
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      left: 2px;
+      right: 2px;
+      background: rgba(26, 77, 114, 0.47);
+      font-family: "PantonBoldItalic";
+      font-size: 21px;
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      text-decoration: none;
+      padding: 0 25px; }
+    .production__item:hover a {
+      display: block; }
+      .production__item:hover a:hover {
+        color: #fff; }
+    .production__item--showmore {
+      width: 70%;
+      margin: 25px 15%;
+      font-family: "PantonRegular";
+      display: block;
+      -webkit-border-radius: 17px;
+      -moz-border-radius: 17px;
+      -ms-border-radius: 17px;
+      border-radius: 17px;
+      -o-background-clip: padding-box;
+      background-clip: padding-box;
+      padding: 5px 10px;
+      border: 2px solid #fff;
+      text-align: center;
+      color: #FFF;
+      text-decoration: none;
+      font-size: 16px;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      transition: all 0.5s linear; }
+      .production__item--showmore:hover, .production__item--showmore:active, .production__item--showmore:focus {
+        color: #0082c7;
+        background-color: #FFF;
+        text-decoration: none; }
 
 @media only screen and (max-width: 1025px) {
   .navbar-default .navbar-nav > li > a {
@@ -236,6 +337,9 @@ ul {
   .about p {
     padding: 0 25px; } }
 @media only screen and (max-width: 500px) {
+  .p5 {
+    padding: 0 15px; }
+
   .navbar-right {
     margin-right: -10px !important; }
 

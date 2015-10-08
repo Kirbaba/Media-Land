@@ -93,6 +93,91 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="production">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<h1 class="block_title">Наша продукция</h1>
+					
+					<ul class="nav nav-pills center-block">
+						<li><a href="#kits" data-toggle="tab">Комплеткы</a></li>
+						<li class="active"><a href="#dishes" data-toggle="tab">Посуда</a></li>
+						<li><a href="#all_prod" data-toggle="tab">Отобразить все</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane" id="kits">
+						<h1 class="block_title">Наша продукция</h1>
+					</div>
+					<div class="tab-pane active" id="dishes">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_28.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_33.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_23.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_18.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_9.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_15.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_13.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
+								<div class="production__item">
+									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_16.png" alt="">
+									<a href="#">Чашка Кот в сапогах</a>
+								</div>
+							</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
+									<a href="#" class="production__item--showmore">Показать больше товаров</a>
+								</div>
+							</div>
+						</div>
+					<div class="tab-pane" id="all_prod">
+						<h1 class="block_title">Наша продукция 2</h1>
+					</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
 <?php wp_footer(); ?>
 </body>
 </html>
