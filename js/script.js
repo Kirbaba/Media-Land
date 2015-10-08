@@ -73,4 +73,9 @@ jQuery(document).ready(function($) {
         $(this).css('height', $(this).width()); 
         $(this).css('line-height', $(this).width() + 'px');       
     });
+
+    $('.license__item').each(function(){
+        $(this).css('height',$(this).width());
+       $(this).css('line-height', $(this).width() + 'px');
+    });
 });

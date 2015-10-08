@@ -178,6 +178,39 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="license">
+		<div class="container">
+			
+				<div class="row">
+					<h1 class="block_title">Наши лицензиары</h1>
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+							<div class="license__item">
+								<img src="<?php bloginfo('template_directory'); ?>/img/l1.png" alt="">
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+							<div class="license__item">
+								<img src="<?php bloginfo('template_directory'); ?>/img/l2.png" alt="">
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+							<div class="license__item">
+								<img src="<?php bloginfo('template_directory'); ?>/img/l3.png" alt="">
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+							<div class="license__item">
+								<img src="<?php bloginfo('template_directory'); ?>/img/l4.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+		</div>
+	</section>
 <?php wp_footer(); ?>
 </body>
 </html>

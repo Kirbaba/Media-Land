@@ -115,4 +115,23 @@
 		}
 	}
 }
+.license {
+	display: block;
+	float: left;
+	width: 100%;
+	position: relative;
+	background-image: url('../img/bg1.png');
+	padding: 25px 0;
+	h1 {
+		color: #587790;
+	}
+	&__item {
+		text-align: center;
+		img {
+			vertical-align: middle;
+			max-width: 80%
+		}
+	}
+
+}
 
