@@ -6,11 +6,7 @@
     <meta name="description" content="">
     <link rel="icon" href="/wp-content/uploads/2015/03/657068.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/wp-content/uploads/2015/03/657068.ico" type="image/x-icon" />
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaOWKyamSxMTXclSDFmJ2N4Am20PCTD6I&sensor=FALSE">
-    </script>
     <title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
     <?php wp_head(); ?>
 </head>
 <body>
@@ -52,28 +48,7 @@
 	</nav>
 
 	<header class="header">
-		<div class="container-fluid">
-			<div class="row">
-				<!-- <div class="fotorama" data-width="100%" data-minheight="500">
-					<div class="fotorama__item" data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg"></div>						
-					<div class="fotorama__item" data-img="<?php bloginfo('template_directory'); ?>/img/slide1.jpg"></div>
-				</div> -->
-				<div class="responsive">
-					<div>
-						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
-						<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-8 col-xs-11">
-							<div class="header__slidedescription">
-								<h2>Кот в сапогах</h2>
-								<p>Набор посуды из трех предметов</p>
-							</div>
-						</div>
-					</div>
-					<div>
-						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
+		<?= do_shortcode('[slider]');?>
 	</header>
 
 	<section class="about">
@@ -101,76 +76,43 @@
 					
 					<ul class="nav nav-pills center-block">
 						<li><a href="#kits" data-toggle="tab">Комплеткы</a></li>
-						<li class="active"><a href="#dishes" data-toggle="tab">Посуда</a></li>
-						<li><a href="#all_prod" data-toggle="tab">Отобразить все</a></li>
+						<li><a href="#dishes" data-toggle="tab">Посуда</a></li>
+						<li class="active"><a href="#all_prod" data-toggle="tab">Отобразить все</a></li>
 					</ul>
 
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div class="tab-pane" id="kits">
-						<h1 class="block_title">Наша продукция</h1>
-					</div>
-					<div class="tab-pane active" id="dishes">
-						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_28.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
+							<div class="row packages__block">
+								<?php echo do_shortcode('[packages]') ?>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_33.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_23.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_18.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
+
+							<div class="row">
+								<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
+									<a href="#" class="production__item--showmore" data-type="packages" data-page="0">Показать больше товаров</a>
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_9.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_15.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_13.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 p5">
-								<div class="production__item">
-									<img src="<?php bloginfo('template_directory'); ?>/img/lena-family_16.png" alt="">
-									<a href="#">Чашка Кот в сапогах</a>
-								</div>
-							</div>
+					<div class="tab-pane" id="dishes">
+							<div class="row dishes__block">
+								<?php echo do_shortcode('[dishes]') ?>
 							</div>
 							<div class="row">
 								<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
-									<a href="#" class="production__item--showmore">Показать больше товаров</a>
+									<a href="#" class="production__item--showmore" data-type="dishes" data-page="0">Показать больше товаров</a>
 								</div>
 							</div>
 						</div>
-					<div class="tab-pane" id="all_prod">
-						<h1 class="block_title">Наша продукция 2</h1>
+					<div class="tab-pane active" id="all_prod">
+						<div class="row any__block">
+							<?php echo do_shortcode('[any]') ?>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
+								<a href="#" class="production__item--showmore" data-type="any" data-page="0">Показать больше товаров</a>
+							</div>
+						</div>
 					</div>
 					</div>
 				</div>	
@@ -336,6 +278,16 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript">
+		addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+		var ajaxurl = '/wp-admin/admin-ajax.php',
+			pagenow = 'toplevel_page_mainpage',
+			typenow = '',
+			adminpage = 'toplevel_page_mainpage',
+			thousandsSeparator = ' ',
+			decimalPoint = ',',
+			isRtl = 0;
+	</script>
 <?php wp_footer(); ?>
 </body>
 </html>

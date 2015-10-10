@@ -143,9 +143,11 @@ ul {
   } */ }
   .header__slidedescription {
     background: rgba(41, 77, 109, 0.46);
-    width: 100%;
+    width: 40%;
     position: absolute;
-    bottom: 70px;
+    top: 500px;
+    left: 50px;
+    /*bottom: 70px;*/
     border-left: 20px solid #0082c7;
     padding: 15px 0 15px 40px; }
     .header__slidedescription h2 {

@@ -30,33 +30,33 @@ window.onload = loadScript;
 
 
 
-$(function() {
+jQuery(function() {
 
-    $(window).scroll(function() {
-        if($(this).scrollTop() != 0) {
-            $('#toTop').fadeIn();
+    jQuery(window).scroll(function() {
+        if(jQuery(this).scrollTop() != 0) {
+            jQuery('#toTop').fadeIn();
         } else {
-            $('#toTop').fadeOut();
+            jQuery('#toTop').fadeOut();
         }
     });
-    $('#toTop').click(function() {
-        $('body,html').animate({scrollTop: 0}, 1000);
+    jQuery('#toTop').click(function() {
+        jQuery('body,html').animate({scrollTop: 0}, 1000);
     });
 
-    $('.smoothScroll').click(function(event) {
+    jQuery('.smoothScroll').click(function(event) {
         event.preventDefault();
         var href=$(this).attr('href');
         var target=$(href);
         var top=target.offset().top;
-        $('html,body').animate({
+        jQuery('html,body').animate({
             scrollTop: top
         }, 1000);
     });
 });
 
-$(function () {
+jQuery(function () {
 
-    $('.responsive').slick({
+    jQuery('.responsive').slick({
         dots: true,
         infinite: false,
         autoplay: true,
@@ -69,10 +69,7 @@ $(function () {
 });
 
 jQuery(document).ready(function($) {
-    $('.production__item').each(function(){
-        $(this).css('height', $(this).width()); 
-        $(this).css('line-height', $(this).width() + 'px');       
-    });
+
 
     $('.license__item').each(function(){
         $(this).css('height',$(this).width());
@@ -89,5 +86,24 @@ jQuery(document).ready(function($) {
 
      $('.workers__item--avatar').each(function(){
         $(this).css('height', $(this).width() );
+    });
+
+    $(document).on('click', '.production__item--showmore', function(){
+        var type = $(this).attr('data-type');
+        var num = $(this).attr('data-page');
+        var button = $(this);
+        console.log(type);
+        console.log(num);
+        $.ajax({
+            url: ajaxurl, //url, � �������� ����������
+            type: "POST",
+            data: "action=show_more_"+type+"&num=" +num, //������, ������� ��������. ����������� ��� action ��������� ��� ������ ����
+            success: function(data){
+                num = parseInt(num)+1;
+                $('.'+type+'__block').append(data);
+                button.attr('data-page', num);
+            }
+        });
+        return false;
     });
 });
