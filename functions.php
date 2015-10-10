@@ -255,7 +255,8 @@ add_action('wp_ajax_delete_channel', 'delete_channel');
 add_action('wp_ajax_save_license', 'save_license');
 add_action('wp_ajax_update_license', 'update_license');
 add_action('wp_ajax_delete_license', 'delete_license');
-
+add_action('wp_ajax_about_product', 'about_product');
+add_action('wp_ajax_nopriv_about_product', 'about_product');
 /**
  * Добавляет секции, параметры и элементы управления (контролы) на страницу настройки темы
  */
@@ -556,7 +557,6 @@ function getDataFromDb($tableName)
 }
 /*-------------------------- админка ---------------------------------------------*/
 
-
 // ------------------ Слайдер ------------------ //
 function register_slider_page(){
     add_menu_page(
@@ -601,5 +601,14 @@ function slider_sc(){
 add_shortcode('slider', 'slider_sc');
 add_action( 'admin_menu', 'register_slider_page' );
 
+function about_product(){
+    $id = $_POST['id'];
+
+    $product = get_post($id);
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/about.php", array('product' => $product), true);
+
+    die();
+}
 
 

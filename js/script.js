@@ -106,4 +106,17 @@ jQuery(document).ready(function($) {
         });
         return false;
     });
+
+    $(document).on('click', '.about_product', function(){
+        var id = $(this).attr('data-id');
+        $.ajax({
+            url: ajaxurl,
+            type: "POST",
+            data: "action=about_product&id=" +id,
+            success: function(data){
+                $('.modal-content').html(data);
+            }
+        });
+        return false;
+    });
 });
