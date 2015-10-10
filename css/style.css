@@ -1,3 +1,16 @@
 .col-lg-3{
     width: 24%;
 }
+
+.responsive {
+    overflow: hidden;
+    height: 700px;
+}
+
+.sliderImg {
+    width: 100%;
+}
+
+.slideItem {
+    position: relative;
+}

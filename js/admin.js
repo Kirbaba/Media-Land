@@ -1,6 +1,15 @@
 jQuery(document).ready(function ($) {
+    $('.custom_media_upload').click(function() {
+        var send_attachment_bkp = wp.media.editor.send.attachment;
+        wp.media.editor.send.attachment = function(props, attachment) {
+            jQuery('.custom_media_image').attr('src', attachment.url);
+            jQuery('.custom_media_url').val(attachment.url);
+            wp.media.editor.send.attachment = send_attachment_bkp;
+        }
+        wp.media.editor.open();
+        return false;
+    });
 
-    //загрузчик изображений вордпресс
     $(document).on('click', '.media-upload', function() {
         var par = $(this).parent();
         var send_attachment_bkp = wp.media.editor.send.attachment;

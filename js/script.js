@@ -95,9 +95,9 @@ jQuery(document).ready(function($) {
         console.log(type);
         console.log(num);
         $.ajax({
-            url: ajaxurl, //url, к которому обращаемся
+            url: ajaxurl,
             type: "POST",
-            data: "action=show_more_"+type+"&num=" +num, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            data: "action=show_more_"+type+"&num=" +num,
             success: function(data){
                 num = parseInt(num)+1;
                 $('.'+type+'__block').append(data);

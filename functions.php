@@ -25,8 +25,9 @@ function add_admin_script(){
     wp_enqueue_script('admin',get_template_directory_uri() . '/js/admin.js', array(), '1');
     wp_enqueue_style( 'my-bootstrap-extension-admin', get_template_directory_uri() . '/css/bootstrap.css', array(), '1');
     wp_enqueue_script( 'my-bootstrap-extension', get_template_directory_uri() . '/js/bootstrap.js', array(), '1');
+    wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array(), '1');
+    wp_enqueue_script( 'fotorama-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
     wp_enqueue_style( 'my-style-admin', get_template_directory_uri() . '/css/admin.css', array(), '1');
-
 }
 
 add_action('admin_enqueue_scripts', 'add_admin_script');
@@ -148,37 +149,7 @@ function my_custom_init_package()
 
 /*------------------------ КОМПЛЕКТЫ ПОСУДЫ -------------------------------*/
 
-/*------------------------- КАСТОМНЫЕ ПОЛЯ --------------------------------
-function my_extra_fields() {
-    add_meta_box( 'extra_price', 'Цена', 'extra_fields_box_func', 'dishes', 'normal', 'high'  );
-    add_meta_box( 'extra_price', 'Цена', 'extra_fields_box_func', 'package', 'normal', 'high'  );
-}
-add_action('add_meta_boxes', 'my_extra_fields', 1);
 
-function extra_fields_box_func( $post ){
-    ?>
-    <p><span>Введите только цифры.</span><input type="text"  name="extra[price]" value="<?php echo get_post_meta($post->ID, 'price', 1); ?>" style="width:50%" /></p>
-    <?php
-}
-
-add_action('save_post', 'my_extra_fields_update', 10, 1);
-
- Сохраняем данные, при сохранении поста
-function my_extra_fields_update( $post_id ){
-
-    if( !isset($_POST['extra']) ) return false;
-    foreach( $_POST['extra'] as $key=>$value ){
-        if( empty($value) ){
-            delete_post_meta($post_id, $key); // удаляем поле если значение пустое
-            continue;
-        }
-
-        update_post_meta($post_id, $key, $value); // add_post_meta() работает автоматически
-    }
-    return $post_id;
-}
-
-------------------------- КАСТОМНЫЕ ПОЛЯ --------------------------------*/
 
 /* Вывод посуды */
 function dishes_sc(){
@@ -584,6 +555,51 @@ function getDataFromDb($tableName)
     return $data;
 }
 /*-------------------------- админка ---------------------------------------------*/
+
+
+// ------------------ Слайдер ------------------ //
+function register_slider_page(){
+    add_menu_page(
+        'Слайдер', 'Слайдер', 'manage_options', 'slider', 'admin_slider_page', '', 200
+    );
+}
+
+function admin_slider_page(){
+    global $wpdb;
+    $parser = new Parser();
+
+    if(isset($_GET['del'])){
+        $wpdb->delete( 'slider', ['id'=>$_GET['del']] );
+    }
+    if(isset($_POST['title'])){
+        //prn($_POST);
+        $wpdb->insert('slider', ['title'=>$_POST['title'], 'descr'=>$_POST['text'], 'img'=>$_POST['attachment_url']]);
+    }
+
+    if (function_exists('wp_enqueue_media')) {
+        wp_enqueue_media();
+    } else {
+        wp_enqueue_style('thickbox');
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script('thickbox');
+    }
+
+    $slider = $wpdb->get_results("SELECT * FROM slider", ARRAY_A);
+
+    $parser->render(TM_DIR . '/view/admin_slider_page.php', ['slider' => $slider]);
+}
+
+function slider_sc(){
+    global $wpdb;
+    $parser = new Parser();
+
+    $slider = $wpdb->get_results("SELECT * FROM slider", ARRAY_A);
+
+    $parser->render(TM_DIR . '/view/slider.php', ['slider' => $slider]);
+}
+
+add_shortcode('slider', 'slider_sc');
+add_action( 'admin_menu', 'register_slider_page' );
 
 
 

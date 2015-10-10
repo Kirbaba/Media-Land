@@ -48,25 +48,7 @@
 	</nav>
 
 	<header class="header">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="responsive">
-					<div>
-						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
-						<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-8 col-xs-11">
-							<div class="header__slidedescription">
-								<h2>Кот в сапогах</h2>
-								<p>Набор посуды из трех предметов</p>
-							</div>
-						</div>
-					</div>
-					<div>
-						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
-
-					</div>
-				</div>
-			</div>
-		</div>
+		<?= do_shortcode('[slider]');?>
 	</header>
 
 	<section class="about">
