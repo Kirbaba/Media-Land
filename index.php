@@ -33,14 +33,14 @@
 					<li><a href="#">Каналы сбыта</a></li>
 					<li><a href="#">Контакты</a></li>
 					<li class='social'>
-						<a href="#" class="social__icon"><i class="fa  fa-google-plus"></i></a>
-						<a href="#" class="social__icon"><i class="fa fa-twitter"></i></a>
-						<a href="#" class="social__icon"><i class="fa fa-facebook"></i></a>
-						<a href="#" class="social__icon"><i class="fa fa-vk"></i></a>
-						<a href="#" class="social__icon"><i class="mail"></i></a>
-						<a href="#" class="social__icon"><i class="ya"></i></a>
-						<a href="#" class="social__icon"><i class="lj"></i></a>
-						<a href="#" class="social__icon"><i class="fa fa-odnoklassniki"></i></a>	
+						<a href="<?php echo get_theme_mod('gpl_textbox'); ?>" class="social__icon"><i class="fa  fa-google-plus"></i></a>
+						<a href="<?php echo get_theme_mod('tw_textbox'); ?>" class="social__icon"><i class="fa fa-twitter"></i></a>
+						<a href="<?php echo get_theme_mod('fb_textbox'); ?>" class="social__icon"><i class="fa fa-facebook"></i></a>
+						<a href="<?php echo get_theme_mod('vk_textbox'); ?>" class="social__icon"><i class="fa fa-vk"></i></a>
+						<a href="<?php echo get_theme_mod('myw_textbox'); ?>" class="social__icon"><i class="mail"></i></a>
+						<a href="<?php echo get_theme_mod('yan_textbox'); ?>" class="social__icon"><i class="ya"></i></a>
+						<a href="<?php echo get_theme_mod('lj_textbox'); ?>" class="social__icon"><i class="lj"></i></a>
+						<a href="<?php echo get_theme_mod('ok_textbox'); ?>" class="social__icon"><i class="fa fa-odnoklassniki"></i></a>
 					</li>  		       
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -107,7 +107,7 @@
 
 							<div class="row">
 								<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
-									<a href="#" class="production__item--showmore" data-type="packages" data-page="0">Показать больше товаров</a>
+									<a href="#" class="production__item--showmore" data-type="packages" data-page="2">Показать больше товаров</a>
 								</div>
 							</div>
 						</div>
@@ -117,7 +117,7 @@
 							</div>
 							<div class="row">
 								<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
-									<a href="#" class="production__item--showmore" data-type="dishes" data-page="0">Показать больше товаров</a>
+									<a href="#" class="production__item--showmore" data-type="dishes" data-page="2">Показать больше товаров</a>
 								</div>
 							</div>
 						</div>
@@ -128,7 +128,7 @@
 
 						<div class="row">
 							<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-12">
-								<a href="#" class="production__item--showmore" data-type="any" data-page="0">Показать больше товаров</a>
+								<a href="#" class="production__item--showmore" data-type="any" data-page="2">Показать больше товаров</a>
 							</div>
 						</div>
 					</div>
@@ -143,27 +143,7 @@
 		
 			<h1 class="block_title">Наши лицензиары</h1>
 			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="license__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/l1.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="license__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/l2.png" alt="">
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="license__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/l3.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="license__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/l4.png" alt="">
-					</div>
-				</div>
+				<?= do_shortcode('[index_license]'); ?>
 			</div>
 				
 		</div>
@@ -173,50 +153,16 @@
 		<div class="container-fluid">
 			<h1 class="block_title">Каналы сбыта</h1>
 			<div class="row">
-				<div class="col-lg-17 col-sm-17 col-xs-6 col-md-17 ">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c1.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-17 col-sm-17 col-xs-6 col-md-17">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c2.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-17 col-sm-17 col-xs-6 col-md-17">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c3.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-17 col-md-17 col-sm-17 col-xs-6">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c4.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-17 col-md-17 col-sm-17 col-xs-6">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c5.png" alt="">
-					</div>
-				</div>
-				<div class="col-lg-17 col-md-17 col-sm-17 col-xs-6">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c6.png" alt="">
-					</div>
-				</div>
-				<div class="col-xs-offset-3 col-lg-17 col-md-17 col-sm-17 col-xs-6">
-					<div class="channels__item">
-						<img src="<?php bloginfo('template_directory'); ?>/img/c7.png" alt="">
-					</div>
-				</div>
+				<?= do_shortcode('[index_channel]'); ?>
 			</div>
 		</div>
 	</section>
 
 	<section class="adress">
 		<div class="container">
-			<h1>+7 (495) 961-28-83</h1>
-			<h3>Москва, Садовническая улица,76/71</h3>
-			<h4>По общим вопросам <a href="mailto:info@medialand.su">info@medialand.su</a></h4>			
+			<h1><?php echo get_theme_mod('phone_textbox'); ?></h1>
+			<h3><?php echo get_theme_mod('address_textbox'); ?></h3>
+			<h4>По общим вопросам <a href="mailto:<?php echo get_theme_mod('mail_textbox'); ?>"><?php echo get_theme_mod('mail_textbox'); ?></a></h4>
 		</div>
 	</section>
 
@@ -280,18 +226,18 @@
 					<li><a href="#">Каналы сбыта</a></li>
 					<li><a href="#">Контакты</a></li>				
 			</ul>
-			<h1>+7 (495) 961-28-83</h1>
+			<h1><?php echo get_theme_mod('phone_textbox'); ?></h1>
 			<h5>© 2015 medialand. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</h5>
 			<div class="col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
 			<div class="social">
-				<a href="#" class="social__icon"><i class="fa  fa-google-plus"></i></a>
-				<a href="#" class="social__icon"><i class="fa fa-twitter"></i></a>
-				<a href="#" class="social__icon"><i class="fa fa-facebook"></i></a>
-				<a href="#" class="social__icon"><i class="fa fa-vk"></i></a>
-				<a href="#" class="social__icon"><i class="mail"></i></a>
-				<a href="#" class="social__icon"><i class="ya"></i></a>
-				<a href="#" class="social__icon"><i class="lj"></i></a>
-				<a href="#" class="social__icon"><i class="fa fa-odnoklassniki"></i></a>
+				<a href="<?php echo get_theme_mod('gpl_textbox'); ?>" class="social__icon"><i class="fa  fa-google-plus"></i></a>
+				<a href="<?php echo get_theme_mod('tw_textbox'); ?>" class="social__icon"><i class="fa fa-twitter"></i></a>
+				<a href="<?php echo get_theme_mod('fb_textbox'); ?>" class="social__icon"><i class="fa fa-facebook"></i></a>
+				<a href="<?php echo get_theme_mod('vk_textbox'); ?>" class="social__icon"><i class="fa fa-vk"></i></a>
+				<a href="<?php echo get_theme_mod('myw_textbox'); ?>" class="social__icon"><i class="mail"></i></a>
+				<a href="<?php echo get_theme_mod('yan_textbox'); ?>" class="social__icon"><i class="ya"></i></a>
+				<a href="<?php echo get_theme_mod('lj_textbox'); ?>" class="social__icon"><i class="lj"></i></a>
+				<a href="<?php echo get_theme_mod('ok_textbox'); ?>" class="social__icon"><i class="fa fa-odnoklassniki"></i></a>
 			</div>
 			</div>
 		</div>

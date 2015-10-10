@@ -95,9 +95,9 @@ jQuery(document).ready(function($) {
         console.log(type);
         console.log(num);
         $.ajax({
-            url: ajaxurl, //url, к которому обращаемся
+            url: ajaxurl, //url, Рє РєРѕС‚РѕСЂРѕРјСѓ РѕР±СЂР°С‰Р°РµРјСЃСЏ
             type: "POST",
-            data: "action=show_more_"+type+"&num=" +num, //данные, которые передаем. Обязательно для action указываем имя нашего хука
+            data: "action=show_more_"+type+"&num=" +num, //РґР°РЅРЅС‹Рµ, РєРѕС‚РѕСЂС‹Рµ РїРµСЂРµРґР°РµРј. РћР±СЏР·Р°С‚РµР»СЊРЅРѕ РґР»СЏ action СѓРєР°Р·С‹РІР°РµРј РёРјСЏ РЅР°С€РµРіРѕ С…СѓРєР°
             success: function(data){
                 num = parseInt(num)+1;
                 $('.'+type+'__block').append(data);

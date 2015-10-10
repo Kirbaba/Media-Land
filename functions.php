@@ -21,6 +21,7 @@ function add_script(){
 }
 
 function add_admin_script(){
+    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.1.3.min.js', array(), '1');
     wp_enqueue_script('admin',get_template_directory_uri() . '/js/admin.js', array(), '1');
     wp_enqueue_style( 'my-bootstrap-extension-admin', get_template_directory_uri() . '/css/bootstrap.css', array(), '1');
     wp_enqueue_script( 'my-bootstrap-extension', get_template_directory_uri() . '/js/bootstrap.js', array(), '1');
@@ -269,7 +270,6 @@ function any_sc(){
 }
 add_shortcode('any', 'any_sc');
 
-
 /* аякс запросы */
 
 add_action('wp_ajax_nopriv_show_more_dishes', 'dishes_sc');
@@ -278,6 +278,312 @@ add_action('wp_ajax_nopriv_show_more_packages', 'packages_sc');
 add_action('wp_ajax_show_more_packages', 'packages_sc');
 add_action('wp_ajax_nopriv_show_more_any', 'any_sc');
 add_action('wp_ajax_show_more_any', 'any_sc');
+add_action('wp_ajax_save_channel', 'save_channel');
+add_action('wp_ajax_update_channel', 'update_channel');
+add_action('wp_ajax_delete_channel', 'delete_channel');
+add_action('wp_ajax_save_license', 'save_license');
+add_action('wp_ajax_update_license', 'update_license');
+add_action('wp_ajax_delete_license', 'delete_license');
+
+/**
+ * Добавляет секции, параметры и элементы управления (контролы) на страницу настройки темы
+ */
+add_action('customize_register', function($customizer){
+    /*Меню настройки контактов*/
+    $customizer->add_section(
+        'contacts_section',
+        array(
+            'title' => 'Настройки контактов',
+            'description' => 'Контакты',
+            'priority' => 35,
+        )
+    );
+    $customizer->add_setting(
+        'phone_textbox',
+        array('default' => '8 800 003 99 22')
+    );
+    $customizer->add_control(
+        'phone_textbox',
+        array(
+            'label' => 'Телефон',
+            'section' => 'contacts_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_setting(
+        'address_textbox',
+        array('default' => 'Москва, Садовническая улица,76/71')
+    );
+    $customizer->add_control(
+        'address_textbox',
+        array(
+            'label' => 'Адрес',
+            'section' => 'contacts_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_setting(
+        'mail_textbox',
+        array('default' => 'info@medialand.su')
+    );
+    $customizer->add_control(
+        'mail_textbox',
+        array(
+            'label' => 'Email',
+            'section' => 'contacts_section',
+            'type' => 'text',
+        )
+    );
+    /*меню настройки соц сетей*/
+    $customizer->add_section(
+        'social_section',
+        array(
+            'title' => 'Соц. сети',
+            'description' => 'Ссылки на соц. сети',
+            'priority' => 35,
+        )
+    );
+    $customizer->add_setting(
+        'tw_textbox',
+        array('default' => 'http://twitter.com/')
+    );
+    $customizer->add_setting(
+        'vk_textbox',
+        array('default' => 'http://vk.com/')
+    );
+    $customizer->add_setting(
+        'fb_textbox',
+        array('default' => 'http://facebook.com/')
+    );
+    $customizer->add_setting(
+        'lj_textbox',
+        array('default' => 'http://livejournal.com/')
+    );
+    $customizer->add_setting(
+        'gpl_textbox',
+        array('default' => 'https://plus.google.com')
+    );
+    $customizer->add_setting(
+        'myw_textbox',
+        array('default' => '')
+    );
+    $customizer->add_setting(
+        'ok_textbox',
+        array('default' => 'http://ok.ru/')
+    );
+    $customizer->add_setting(
+        'yan_textbox',
+        array('default' => 'http://yandex.ru/')
+    );
+
+    $customizer->add_control(
+        'vk_textbox',
+        array(
+            'label' => 'VKontakte',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'fb_textbox',
+        array(
+            'label' => 'Facebook',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'lj_textbox',
+        array(
+            'label' => 'LiveJournal',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'gpl_textbox',
+        array(
+            'label' => 'Google+',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'myw_textbox',
+        array(
+            'label' => 'Мой Мир',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'ok_textbox',
+        array(
+            'label' => 'Одноклассники',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'tw_textbox',
+        array(
+            'label' => 'Twitter',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+    $customizer->add_control(
+        'yan_textbox',
+        array(
+            'label' => 'Я',
+            'section' => 'social_section',
+            'type' => 'text',
+        )
+    );
+});
+
+/*-------------------------- админка ---------------------------------------------*/
+function admin_menu()
+{
+    add_menu_page('Настройка каналов сбыта', 'Каналы сбыта', 'manage_options', 'channels', 'channels');
+    add_menu_page('Настройка лицензиаров', 'Лицензиары', 'manage_options', 'licenses', 'licenses');
+}
+
+add_action('admin_menu', 'admin_menu');
+//админка наших партнеров
+function channels()
+{
+    if (function_exists('wp_enqueue_media')) {
+        wp_enqueue_media();
+    } else {
+        wp_enqueue_style('thickbox');
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script('thickbox');
+    }
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/channels.php", array(), true);
+}
+
+function channelsgrid_sc()
+{
+    $channels = getDataFromDb('channels');
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/channelsgrid.php", array('channels' => $channels), true);
+}
+add_shortcode('channelsgrid','channelsgrid_sc');
+
+//сохранение нового канала
+function save_channel()
+{
+    global $wpdb;
+
+    if (!empty($_POST['link']) && !empty($_POST['img'])) {
+        $wpdb->insert('channels', array('link' => $_POST['link'], 'img' => $_POST['img']));
+    }
+    die();
+}
+
+//обновление канала
+function update_channel()
+{
+    global $wpdb;
+    //prn($_POST);
+    if (!empty($_POST['link']) && !empty($_POST['img'])) {
+        $wpdb->update('channels', array('link' => $_POST['link'], 'img' => $_POST['img']), array('id' => $_POST['num']));
+    }
+    die();
+}
+
+//Удаление канала
+function delete_partner()
+{
+    global $wpdb;
+    //prn($_POST);
+    $wpdb->delete('channels', array('id' => $_POST['num']));
+    die();
+}
+
+//вывод каналов на страницу
+function index_channel_sc(){
+    $channels = getDataFromDb('channels');
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/indexchannels.php", array('channels' => $channels), true);
+}
+add_shortcode('index_channel','index_channel_sc');
+
+//админка лицензиаров
+function licenses()
+{
+    if (function_exists('wp_enqueue_media')) {
+        wp_enqueue_media();
+    } else {
+        wp_enqueue_style('thickbox');
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script('thickbox');
+    }
+
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/license.php", array(), true);
+}
+
+function licensegrid_sc()
+{
+    $license = getDataFromDb('licenses');
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/licensegrid.php", array('licenses' => $license), true);
+}
+add_shortcode('licensegrid','licensegrid_sc');
+
+//сохранение нового лицензиара
+function save_license()
+{
+    global $wpdb;
+
+    if (!empty($_POST['link']) && !empty($_POST['img'])) {
+        $wpdb->insert('licenses', array('link' => $_POST['link'], 'img' => $_POST['img']));
+    }
+    die();
+}
+
+//обновление лицензиара
+function update_license()
+{
+    global $wpdb;
+    //prn($_POST);
+    if (!empty($_POST['link']) && !empty($_POST['img'])) {
+        $wpdb->update('licenses', array('link' => $_POST['link'], 'img' => $_POST['img']), array('id' => $_POST['num']));
+    }
+    die();
+}
+
+//Удаление лицензиара
+function delete_license()
+{
+    global $wpdb;
+    //prn($_POST);
+    $wpdb->delete('licenses', array('id' => $_POST['num']));
+    die();
+}
+
+//вывод лицензиаров на страницу
+function index_license_sc(){
+    $license = getDataFromDb('licenses');
+    $parser = new Parser();
+    $parser->render(TM_DIR . "/view/indexlicense.php", array('licenses' => $license), true);
+}
+add_shortcode('index_license','index_license_sc');
+
+//получение всех изображений по названию таблицы
+function getDataFromDb($tableName)
+{
+    global $wpdb;
+
+    $data = $wpdb->get_results("SELECT * FROM `$tableName`", ARRAY_A);
+    // prn($data);
+    return $data;
+}
+/*-------------------------- админка ---------------------------------------------*/
 
 
 
