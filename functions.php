@@ -1,5 +1,4 @@
 <?php
-
 function add_style(){
     wp_enqueue_style( 'my-bootstrap-extension', get_template_directory_uri() . '/css/bootstrap.css', array(), '1');
     wp_enqueue_style( 'font-ewesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array('my-bootstrap-extension'), '1');
@@ -14,8 +13,6 @@ function add_script(){
     wp_enqueue_script( 'my-bootstrap-extension', get_template_directory_uri() . '/js/bootstrap.js', array(), '1');
     wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array(), '1');
     wp_enqueue_script( 'fotorama-js', '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js', array(), '1');
-
-    
 }
 
 add_action( 'wp_enqueue_scripts', 'add_style' );
@@ -55,6 +52,29 @@ add_filter('excerpt_more', 'excerpt_readmore');
 
 if ( function_exists( 'add_theme_support' ) )
     add_theme_support( 'post-thumbnails' );
+
+
+// ------------------ Слайдер ------------------ //
+function register_slider_page(){
+    add_menu_page(
+        'Слайдер', 'Слайдер', 'manage_options', 'slider', 'admin_slider_page', '', 200
+    );
+}
+
+function admin_slider_page(){
+    global $wpdb;
+    $parser = new Parser_write_theme();
+
+    if(isset($_GET['del'])){
+        $wpdb->delete( 'orders', ['id'=>$_GET['del']] );
+    }
+
+    $orders = $wpdb->get_results("SELECT * FROM orders", ARRAY_A);
+
+    $parser->render(TM_DIR . '/view/orders_admin_page.php', ['orders' => $orders]);
+}
+
+add_action( 'admin_menu', 'register_slider_page' );
 
 
 

@@ -70,7 +70,6 @@
 					</div>
 					<div>
 						<img src="<?php bloginfo('template_directory'); ?>/img/slide1.jpg" alt="">
-
 					</div>
 				</div>
 			</div>
