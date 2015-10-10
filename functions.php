@@ -222,7 +222,7 @@ function any_sc(){
     $args = array(
         'post_type' => array('dishes','package'),
         'post_status' => 'publish',
-        'posts_per_page' => 8,
+        'posts_per_page' => 4,
         'paged'=> $page
     );
 

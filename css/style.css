@@ -2,6 +2,11 @@
     width: 24%;
 }
 
+.p5{
+    float: none;
+    display: inline-block;
+}
+
 .responsive {
     overflow: hidden;
     height: 700px;
@@ -13,4 +18,19 @@
 
 .slideItem {
     position: relative;
+}
+
+.modal-body-content{
+    padding: 30px;
+    font-size: 1.3em;
+}
+
+.modal-body-content img{
+    float: left;
+    width: 30%;
+    height: 30%;
+}
+
+.modal-header{
+    text-align: center;
 }
