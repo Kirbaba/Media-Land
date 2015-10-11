@@ -1,8 +1,5 @@
-.col-lg-3{
+.c5{
     width: 24%;
-}
-
-.p5{
     float: none;
     display: inline-block;
 }
@@ -29,6 +26,7 @@
     float: left;
     width: 30%;
     height: 30%;
+    margin: 10px;
 }
 
 .modal-header{
