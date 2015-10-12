@@ -28,6 +28,17 @@ function loadScript() {
 
 window.onload = loadScript;
 
+jQuery(function() {
+     jQuery('.smoothScroll').click(function(event) {
+        event.preventDefault();
+        var href=jQuery(this).attr('href');
+        var target=jQuery(href);
+        var top=target.offset().top;
+        jQuery('html,body').animate({
+            scrollTop: top
+        }, 1000);
+    });
+ });
 
 
 jQuery(function() {
@@ -42,16 +53,7 @@ jQuery(function() {
     jQuery('#toTop').click(function() {
         jQuery('body,html').animate({scrollTop: 0}, 1000);
     });
-
-    jQuery('.smoothScroll').click(function(event) {
-        event.preventDefault();
-        var href=$(this).attr('href');
-        var target=$(href);
-        var top=target.offset().top;
-        jQuery('html,body').animate({
-            scrollTop: top
-        }, 1000);
-    });
+   
 });
 
 jQuery(function () {

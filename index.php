@@ -27,11 +27,11 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		      	     
 				<ul class="nav navbar-nav navbar-right navigation__list">		      
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Наша продукция</a></li>
-					<li><a href="#">Наши лицензиары</a></li>
-					<li><a href="#">Каналы сбыта</a></li>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="#go_about" class="smoothScroll">О компании</a></li>
+					<li><a href="#go_prod" class="smoothScroll">Наша продукция</a></li>
+					<li><a href="#go_lic" class="smoothScroll">Наши лицензиары</a></li>
+					<li><a href="#go_chen" class="smoothScroll">Каналы сбыта</a></li>
+					<li><a href="#go_cont" class="smoothScroll">Контакты</a></li>
 					<li class='social'>
 						<a href="<?php echo get_theme_mod('gpl_textbox'); ?>" class="social__icon"><i class="fa  fa-google-plus"></i></a>
 						<a href="<?php echo get_theme_mod('tw_textbox'); ?>" class="social__icon"><i class="fa fa-twitter"></i></a>
@@ -52,6 +52,7 @@
 	</header>
 
 	<section class="about">
+		<a name="go_about" id="go_about"></a>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
@@ -69,6 +70,7 @@
 	</section>
 
 	<section class="production">
+		<a name="go_prod" id="go_prod"></a>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
@@ -121,6 +123,7 @@
 	</section>
 
 	<section class="license">
+		<a name="go_prod" id="go_lic"></a>
 		<div class="container">			
 		
 			<h1 class="block_title">Наши лицензиары</h1>
@@ -132,6 +135,7 @@
 	</section>
 
 	<section class="channels">
+		<a name="go_chen" id="go_chen"></a>
 		<div class="container-fluid">
 			<h1 class="block_title">Каналы сбыта</h1>
 			<div class="row">
@@ -149,6 +153,7 @@
 	</section>
 
 	<section class="workers">
+		<a name="go_cont" id="go_cont"></a>
 		<div class="container">
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<div class="workers__item">
