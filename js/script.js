@@ -69,7 +69,8 @@ jQuery(function () {
 });
 
 jQuery(document).ready(function($) {
-
+  $('.responsive').css({'height':$('.responsive img:first').height()})       
+   
 
     $('.license__item').each(function(){
         $(this).css('height',$(this).width());
@@ -93,6 +94,10 @@ jQuery(document).ready(function($) {
         $(this).css('height', $(this).width()); 
         $(this).css('line-height', $(this).width() + 'px');       
     });
+
+  // $('.responsive').each(function(){        
+  //       $(this).css('height', $('.responsive img:first').height());             
+  //   });
 
 
     $(document).on('click', '.production__item--showmore', function(){
