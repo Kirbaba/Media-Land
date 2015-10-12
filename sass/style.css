@@ -143,11 +143,9 @@ ul {
   } */ }
   .header__slidedescription {
     background: rgba(41, 77, 109, 0.46);
-    width: 40%;
+    width: 100%;
     position: absolute;
-    top: 500px;
-    left: 50px;
-    /*bottom: 70px;*/
+    bottom: 70px;
     border-left: 20px solid #0082c7;
     padding: 15px 0 15px 40px; }
     .header__slidedescription h2 {
@@ -288,9 +286,13 @@ ul {
   .production__item {
     background-color: #FFF;
     margin: 5px 0;
+    padding: 2px 0;
     position: relative; }
     .production__item img {
-      width: 100%;
+      width: auto;
+      height: 100%;
+      display: block;
+      margin: 0 auto;
       vertical-align: middle; }
     .production__item a {
       display: none;

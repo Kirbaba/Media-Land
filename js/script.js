@@ -88,6 +88,13 @@ jQuery(document).ready(function($) {
         $(this).css('height', $(this).width() );
     });
 
+
+    $('.production__item').each(function(){
+        $(this).css('height', $(this).width()); 
+        $(this).css('line-height', $(this).width() + 'px');       
+    });
+
+
     $(document).on('click', '.production__item--showmore', function(){
         var type = $(this).attr('data-type');
         var num = $(this).attr('data-page');

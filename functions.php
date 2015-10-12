@@ -172,7 +172,7 @@ function dishes_sc(){
    // prn($my_query);
 
     $parser = new Parser();
-    $parser->render(TM_DIR . '/view/dishes.php', ['my_query' => $my_query]);
+    $parser->render(TM_DIR . '/view/dishes.php', array('my_query' => $my_query));
 
     if($_POST['num']){
         die();

@@ -63,9 +63,13 @@
 	&__item {
 		background-color: #FFF;
 		margin: 5px 0;
+		padding: 2px 0;
 		position: relative;
 		img {
-			width: 100%;
+			width: auto;
+			height: 100%;
+			display: block;
+			margin: 0 auto;
 			vertical-align: middle;
 		}
 		a {
