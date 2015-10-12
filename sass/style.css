@@ -111,6 +111,9 @@ ul {
   border-top: 10px solid #0082C7;
   background-color: #fff;
   height: 80px; }
+  .navigation .container-fluid {
+    width: 100%;
+    background-color: #FFF; }
 
 .navbar-right {
   margin-right: 0 !important; }
