@@ -109,6 +109,10 @@ jQuery(document).ready(function($) {
                 num = parseInt(num)+1;
                 $('.'+type+'__block').append(data);
                 button.attr('data-page', num);
+                $('.production__item').each(function(){
+                $(this).css('height', $(this).width()); 
+                $(this).css('line-height', $(this).width() + 'px');       
+    });
             }
         });
         return false;

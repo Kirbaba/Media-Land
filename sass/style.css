@@ -286,21 +286,28 @@ ul {
   .production__item {
     background-color: #FFF;
     margin: 5px 0;
-    padding: 2px 0;
-    position: relative; }
-    .production__item img {
-      width: auto;
+    border: 2px solid #fff;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    word-spacing: nowrap;
+    vertical-align: middle; }
+    .production__item:after {
+      content: "";
+      display: inline-block;
       height: 100%;
-      display: block;
-      margin: 0 auto;
+      vertical-align: middle; }
+    .production__item img {
+      max-width: 100%;
+      min-height: 100%;
       vertical-align: middle; }
     .production__item a {
       display: none;
       position: absolute;
-      top: 2px;
-      bottom: 2px;
-      left: 2px;
-      right: 2px;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
       background: rgba(26, 77, 114, 0.47);
       font-family: "PantonBoldItalic";
       font-size: 21px;
