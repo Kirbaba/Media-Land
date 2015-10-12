@@ -85,7 +85,7 @@ ul {
     display: block;
     float: left;
     color: #FFF !important;
-    margin: 0 5px;
+    margin: 0 2px;
     text-align: center;
     line-height: 29px;
     padding: 0 !important;
@@ -144,10 +144,11 @@ a#go_cont {
   margin-right: 0 !important; }
 
 .navbar-default .navbar-nav > li > a {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "PantonBold";
   text-transform: uppercase;
-  color: #7A7B80; }
+  color: #7A7B80;
+  padding: 15px 10px; }
   .navbar-default .navbar-nav > li > a:hover {
     color: #0082c7; }
 
@@ -528,6 +529,8 @@ a#go_cont {
     width: auto;
     float: left;
     margin-left: 20px; }
+    .footer .social .social__icon {
+      margin: 0 5px; }
 
 @media only screen and (max-width: 1025px) {
   .navbar-default .navbar-nav > li > a {

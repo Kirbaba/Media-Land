@@ -13,10 +13,11 @@
 }
 
 .navbar-default .navbar-nav > li > a {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: $b;
 	text-transform: uppercase;
 	color: #7A7B80;
+	padding: 15px 10px;
 	&:hover {
 		color: $blue;
 	}
