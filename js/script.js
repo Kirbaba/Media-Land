@@ -68,7 +68,7 @@ jQuery(function () {
 
 });
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {    
   $('.responsive').css({'height':$('.responsive img:first').height()})       
    
 
@@ -135,4 +135,40 @@ jQuery(document).ready(function($) {
         });
         return false;
     });
+});
+
+// jQuery(window).resize(function(){
+// jQuery('.responsive').css({'height':jQuery('.responsive img:first').height()})       
+   
+
+//     jQuery('.license__item').each(function(){
+//         jQuery(this).css('height',jQuery(this).width());
+//        jQuery(this).css('line-height', jQuery(this).width() + 'px');
+//     });
+//      jQuery('.license__item').each(function(){
+//         jQuery(this).css('height',jQuery(this).width());
+//        jQuery(this).css('line-height', jQuery(this).width() + 'px');
+//     });
+//      jQuery('.channels__item').each(function(){
+//         jQuery(this).css('height', jQuery(this).width() * 0.66 );
+//        jQuery(this).css('line-height', jQuery(this).height() + 'px');
+//     });
+
+//      jQuery('.workers__item--avatar').each(function(){
+//         jQuery(this).css('height', jQuery(this).width() );
+//     });
+
+
+//     jQuery('.production__item').each(function(){
+//         jQuery(this).css('height', jQuery(this).width()); 
+//         jQuery(this).css('line-height', jQuery(this).width() + 'px');       
+//     });
+
+// });
+
+jQuery(document).on('click', "a[data-toggle='tab']", function(){ 
+        jQuery('.production__item').each(function(){ 
+        jQuery(this).css('height', jQuery(this).width()); 
+        jQuery(this).css('line-height', jQuery(this).width() + 'px'); 
+    }); 
 });

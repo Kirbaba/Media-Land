@@ -68,6 +68,21 @@
 	.responsive {
 		margin-top: 80px;
 	} 
+	.navbar-nav {
+		margin: 0;
+		> li > a {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+
+	ul.nav.navbar-nav.navbar-right.navigation__list {
+		margin-top: 0;
+	}
+
+	.social {
+		margin-top: 0;
+	}
 
 }
 
@@ -84,7 +99,7 @@
 	}
 
 	.social {
-		margin-top: 10px;
+		margin-top: 0;
 		margin-left: 10px;
 	}
 
@@ -137,5 +152,9 @@
 	.responsive {
 		margin-top: 80px;
 	} 
+
+	.navbar-nav {
+    	margin: 7.5px -15px;
+	}
    
 }
